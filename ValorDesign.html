@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valor Design Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Global */
+body { margin:0; background:#000; color:#fff; font-family:'Poppins', sans-serif; overflow-x:hidden; }
+.gold { color:#d4af37; }
+.section { padding:120px 10%; }
+.glass { background:rgba(255,255,255,0.08); backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:40px; }
+a { text-decoration:none; color:#d4af37; }
+
+/* Animations */
+.reveal { opacity:0; transform:translateY(40px); transition:1s ease; }
+.reveal.active { opacity:1; transform:translateY(0); }
+
+/* Preloader */
+#preloader { position:fixed; top:0; left:0; width:100%; height:100%; background:#000; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index:10000; animation:fadeOut 3s ease forwards 2.5s; }
+#preloader img { width:180px; animation:pop 1s ease; }
+@keyframes fadeOut { to { opacity:0; visibility:hidden; }}
+@keyframes pop { 0%{transform:scale(0);} 100%{transform:scale(1);} }
+
+/* Navbar */
+nav { width:100%; position:fixed; top:0; left:0; display:flex; justify-content:space-between; align-items:center; padding:20px 10%; background:rgba(0,0,0,0.65); backdrop-filter:blur(10px); z-index:9999; border-bottom:1px solid rgba(255,255,255,0.05); }
+nav a { margin-left:25px; font-weight:600; }
+
+/* Hero */
+#hero { text-align:center; padding-top:170px; }
+#hero h1 { font-size:68px; font-weight:800; }
+#hero p { font-size:21px; opacity:0.8; }
+
+/* Assistant */
+#assistantBubble { position:fixed; right:30px; bottom:30px; width:70px; height:70px; background:#d4af37; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; cursor:pointer; box-shadow:0 0 20px #d4af37aa; animation:float 3s infinite; z-index:9999; }
+@keyframes float { 0%{transform:translateY(0);} 50%{transform:translateY(-10px);} 100%{transform:translateY(0);} }
+#assistantWindow { position:fixed; right:30px; bottom:120px; width:340px; background:#111; border:1px solid #d4af37; border-radius:14px; padding:20px; display:none; z-index:9999; }
+
+/* Chat */
+#chatArea { height:230px; overflow-y:auto; background:#000; padding:10px; border-radius:8px; border:1px solid #333; margin-bottom:10px; font-size:14px; }
+.msg { margin:8px 0; padding:10px; border-radius:10px; max-width:80%; }
+.user { background:#222; margin-left:auto; }
+.valorita { background:#1a1a1a; border-left:3px solid #d4af37; }
+#typing { color:#d4af37; font-size:13px; display:none; }
+
+/* Pricing */
+.pricing-box { margin-top:40px; display:flex; gap:30px; flex-wrap:wrap; }
+.plan { flex:1; min-width:260px; padding:30px; border-radius:14px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); text-align:center; transition:0.3s; }
+.plan:hover { box-shadow:0 0 20px #d4af37aa; transform:translateY(-5px); }
+.plan h2 { color:#d4af37; }
+.plan button { margin-top:15px; padding:12px 20px; background:#d4af37; border:none; border-radius:8px; font-weight:700; cursor:pointer; }
+
+/* Footer */
+footer { text-align:center; padding:30px; background:#111; border-top:1px solid rgba(255,255,255,0.05); }
+</style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader"><img src="C:\Users\shaur\Downloads\ChatGPT_Image_Nov_19__2025__03_49_21_PM-removebg-preview.png" alt="Valor Logo"><br><h2 class="gold">VALOR DESIGN CO.</h2></div>
+
+<!-- Navbar -->
+<nav>
+<div class="gold" style="font-size:22px;font-weight:700;">VALOR</div>
+<div>
+<a href="#hero">Home</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="reveal">
+<h1 class="gold">Designs That Dominate</h1>
+<p>Premium visuals, tools & digital experiences engineered for the future.</p>
+</section>
+
+<!-- About Section -->
+<section class="section reveal">
+<div class="glass">
+<h2 class="gold">About Valor</h2>
+<p>Bold, premium, future-ready digital solutions. Built for domination.</p>
+</div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section reveal">
+<h1 class="gold">Our Services</h1>
+<div class="glass" style="margin-top:40px; line-height:2;">
+• Valor Games – Models, assets, UI<br>
+• Valor Docs – Decks, resumes, templates<br>
+• Valor Codes – Full-stack apps, APIs<br>
+• Valorita AI – Coming soon
+</div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="section reveal">
+<h1 class="gold">Pricing (₹)</h1>
+<div class="pricing-box">
+<div class="plan"><h2>Starter – ₹299</h2><p>Basic design work</p><button>Choose</button><script>document.currentScript.previousElementSibling.onclick=()=>location.href='#contact';</script></div>
+<div class="plan"><h2>Pro – ₹799</h2><p>Documents + Branding</p><button>Choose</button><script>document.currentScript.previousElementSibling.onclick=()=>location.href='#contact';</script></div>
+<div class="plan"><h2>Ultimate – ₹1,499</h2><p>Games + Code + Documents</p><button>Choose</button><script>document.currentScript.previousElementSibling.onclick=()=>location.href='#contact';</script></div>
+</div>
+</section>
+
+<!-- Valorita Assistant -->
+<div id="assistantBubble">?</div>
+<div id="assistantWindow">
+<h3 class="gold">Valorita</h3>
+<div id="chatArea"></div>
+<div id="typing">Valorita is typing...</div>
+<input id="userInput" placeholder="Type your message..." style="width:100%;padding:10px;border:none;border-radius:8px;margin-top:5px;background:#222;color:white;">
+<button id="sendBtn" style="margin-top:10px;width:100%;padding:10px;background:#d4af37;border:none;border-radius:8px;font-weight:700;cursor:pointer;">Send</button>
+</div>
+
+<script>
+/* Reveal on Scroll */
+const reveals = document.querySelectorAll('.reveal');
+function reveal() {
+reveals.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+if(top < window.innerHeight - 100) sec.classList.add('active');
+});
+}
+window.addEventListener('scroll', reveal);
+reveal();
+
+/* Assistant Toggle */
+const bubble = document.getElementById('assistantBubble');
+const windowA = document.getElementById('assistantWindow');
+bubble.onclick = () => {
+windowA.style.display = windowA.style.display === 'block' ? 'none' : 'block';
+};
+
+/* Chat */
+const chatArea = document.getElementById('chatArea');
+const userInput = document.getElementById('userInput');
+const sendBtn = document.getElementById('sendBtn');
+const typing = document.getElementById('typing');
+
+function addUser(msg){
+chatArea.innerHTML += `<div class='msg user'><b>You:</b> ${msg}</div>`;
+chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function addValorita(msg){
+chatArea.innerHTML += `<div class='msg valorita'><b>Valorita:</b> ${msg}</div>`;
+chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function reply(msg){
+let r = "I'm here to help!";
+if(msg.includes("price")) r = "Plans start at ₹299 and go up to ₹1499.";
+if(msg.includes("service")) r = "We offer Games, Docs, Code, and more.";
+if(msg.includes("hi")||msg.includes("hello")) r = "Hello! What do you need?";
+typing.style.display = 'block';
+setTimeout(()=>{
+typing.style.display = 'none';
+addValorita(r);
+}, 1200);
+}
+
+sendBtn.onclick = () => {
+const text = userInput.value.trim(); if(text=='') return;
+addUser(text);
+userInput.value = '';
+reply(text.toLowerCase());
+};
+</script>
+
+<section id="process" class="section">
+<h1 class="gold">How We Work</h1>
+<div class="timeline">
+  <div class="step"><span>1</span><h3>Idea & Vision</h3><p>You tell us what you want. We refine it into a high‑power concept.</p></div>
+  <div class="step"><span>2</span><h3>Design & Build</h3><p>We craft visuals, code, tools, or documents — elite and precise.</p></div>
+  <div class="step"><span>3</span><h3>Review & Perfect</h3><p>You review. We fine‑tune. Zero flaws. Only domination‑level quality.</p></div>
+  <div class="step"><span>4</span><h3>Delivery</h3><p>You receive the final masterpiece ready to use or upload anywhere.</p></div>
+</div>
+</section>
+
+<style>
+.timeline {display:flex;flex-direction:column;gap:25px;margin-top:25px;}
+.timeline .step {position:relative;padding:20px;border-left:3px solid #d4af37;animation:slideIn 0.8s ease forwards;opacity:0;}
+.timeline .step span {position:absolute;left:-18px;top:15px;background:#d4af37;color:black;font-weight:700;padding:6px 10px;border-radius:50%;}
+@keyframes slideIn {from{transform:translateX(-20px);opacity:0;}to{transform:translateX(0);opacity:1;}}
+</style>
+
+<section id="faq" class="section">
+<h1 class="gold">FAQ</h1>
+<div class="faq-box">
+  <details><summary>What is Valor Design Co.?</summary><p>A next‑gen digital innovation brand delivering elite designs, code, documents, and tools.</p></details>
+  <details><summary>How fast is delivery?</summary><p>Depends on the project, but most small tasks finish within 24–72 hours.</p></details>
+  <details><summary>Do you support Indians specifically?</summary><p>Yes — pricing is in ₹ Rupees and optimized for Indian creators and businesses.</p></details>
+  <details><summary>Can I contact you directly?</summary><p>Yes, via WhatsApp: 9634456751.</p></details>
+</div>
+</section>
+
+<style>
+.faq-box details {background:#1113;padding:15px;border-radius:12px;margin-bottom:10px;border:1px solid #333;cursor:pointer;}
+.faq-box summary {color:#d4af37;font-size:18px;}
+.faq-box p {margin-top:10px;line-height:1.6;}
+</style>
+
+<footer>
+© 2025 Valor Design Co. — Built to Dominate Contact us on Whatsapp "9634456751"!
+</footer>
+
+</body>
+</html>
